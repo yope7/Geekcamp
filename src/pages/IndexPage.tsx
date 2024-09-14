@@ -41,19 +41,49 @@ export function IndexPage(): JSX.Element {
                     msOverflowStyle: "none",
                 }}
             >
-                <div style={{ minWidth: "100vw" }}>
+                <div style={{ minWidth: "100vw", backgroundColor: "lightgray" }}>
                     <h1>Index Page</h1>
                 </div>
-                <div style={{ minWidth: "100vw" }}>
-                    <Game1 />
+                <div style={{ minWidth: "100vw", height: "100vh" }}>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "100%",
+                            height: "100%",
+                        }}
+                    >
+                        <Game1 />
+                    </div>
                 </div>
-                <div style={{ minWidth: "100vw" }}>
-                    <Game2 />
+                <div style={{ minWidth: "100vw", height: "100vh" }}>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "100%",
+                            height: "100%",
+                        }}
+                    >
+                        <Game2 />
+                    </div>
                 </div>
-                <div style={{ minWidth: "100vw" }}>
-                    <Game3 />
+                <div style={{ minWidth: "100vw", height: "100vh" }}>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "100%",
+                            height: "100%",
+                        }}
+                    >
+                        <Game3 />
+                    </div>
                 </div>
-                <div style={{ minWidth: "100vw" }}>
+                <div style={{ minWidth: "100vw", backgroundColor: "lightgray" }}>
                     <h1>End Page</h1>
                 </div>
             </div>
