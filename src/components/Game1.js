@@ -54,7 +54,7 @@ const Scene = ({ elevationAngle, azimuthAngle, shoot, bullets }) => {
       <Target position={[0, 2, -10]} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
         <planeGeometry args={[100, 100]} />
-        <meshStandardMaterial color="green" />
+        <meshStandardMaterial color="#e2e2e2" />
       </mesh>
       {bullets.map((bullet, index) => (
         <Bullet key={index} position={bullet.position} velocity={bullet.velocity} />
@@ -63,7 +63,7 @@ const Scene = ({ elevationAngle, azimuthAngle, shoot, bullets }) => {
   );
 };
 
-const Game1 = () => {
+export const Game1 = () => {
   const [elevationAngle, setElevationAngle] = useState(0);
   const [azimuthAngle, setAzimuthAngle] = useState(0);
   const [bullets, setBullets] = useState([]);
@@ -88,10 +88,10 @@ const Game1 = () => {
 
   return (
     <Container>
-      <Typography variant="h4" align="center" gutterBottom>
+      <Typography variant="h4" align="center" >
         3D射的ゲーム
       </Typography>
-      <Box sx={{ width: '100%', height: '400px', mb: 2 }}>
+      <Box sx={{ width: '100%', height: '100%', mb: 0 }}>
         <Canvas>
           <Scene
             elevationAngle={elevationAngle}
@@ -115,14 +115,16 @@ const Game1 = () => {
         min={-90}
         max={90}
       />
-      <Button variant="contained" onClick={shoot} fullWidth sx={{ mt: 2 }}>
+      <Button variant="contained" onClick={shoot} fullWidth sx={{ mt: 0 }} style={{
+        display: 'block',
+        // align : 'center',
+      }}>
         発射！
       </Button>
-      <Typography variant="h6" align="center" sx={{ mt: 2 }}>
+      <Typography variant="h6" align="center" sx={{ mt: 0 }}>
         スコア: {score}
       </Typography>
-    </Container>
+      </Container>
   );
 };
 
-export default Game1;

@@ -1,28 +1,11 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 
 interface Game2Props {
-  onComplete: () => void;
-  isActive: boolean;
-=======
-export function Game2(): JSX.Element {
-    return (
-        <>
-            <div
-                style={{
-                    width: "70%",
-                    height: "80%",
-                    backgroundColor: "lightgreen",
-                }}
-            >
-                <h1>Game 2</h1>
-            </div>
-        </>
-    );
->>>>>>> 6ca6860cfffebd8b5aa55a291962f020b626dda6
+  // onComplete: () => void;
+  // isActive: boolean;__
 }
 
-export const Game2: React.FC<Game2Props> = ({ onComplete, isActive }) => {
+export const Game2: React.FC<Game2Props> = () => {
   const [answer, setAnswer] = useState('');
   const [message, setMessage] = useState('');
 
@@ -56,7 +39,7 @@ export const Game2: React.FC<Game2Props> = ({ onComplete, isActive }) => {
       </form>
       {message && <p className="text-xl mb-8">{message}</p>}
       <button
-        onClick={onComplete}
+        // onClick={onComplete}
         className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
       >
         ゲーム2を完了
