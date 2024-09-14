@@ -6,6 +6,9 @@ export function IndexPage(): JSX.Element {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const updateScroll = useCallback((event: WheelEvent) => {
+        // width
+        console.log(containerRef.current?.scrollWidth);
+        console.log(containerRef.current?.scrollLeft);
         if (containerRef.current) {
             containerRef.current.scrollLeft += event.deltaY;
         }
@@ -28,6 +31,17 @@ export function IndexPage(): JSX.Element {
                 whiteSpace: "nowrap",
             }}
         >
+            <img
+                src="/images/natukumo.png"
+                alt="natsukumo"
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    zIndex: -1,
+                }}
+            />
             <div
                 ref={containerRef}
                 style={{
@@ -41,17 +55,6 @@ export function IndexPage(): JSX.Element {
                     msOverflowStyle: "none",
                 }}
             >
-                <img
-                    src="/images/natukumo.png"
-                    alt="natsukumo"
-                    style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        zIndex: -1,
-                    }}
-                />
                 <div
                     style={{
                         minWidth: "100vw",
@@ -101,11 +104,14 @@ export function IndexPage(): JSX.Element {
                         <Game3 />
                     </div>
                 </div>
-                <div style={{
-                    minWidth: "100vw",
-                    // 薄くオレンジ
-                    background: "linear-gradient(to right, rgba(255, 77, 0, 0.6), rgba(255, 77, 0, 0.6))",
-                }}>
+                <div
+                    style={{
+                        minWidth: "100vw",
+                        alignItems: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
                     <h1>End Page</h1>
                 </div>
             </div>
