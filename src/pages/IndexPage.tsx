@@ -5,20 +5,18 @@ import { Game1, Game2, Game3 } from "../components";
 export function IndexPage(): JSX.Element {
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const updateScroll = useCallback(() => {
+    const updateScroll = useCallback((event: WheelEvent) => {
         if (containerRef.current) {
-            // スクロール位置に応じて横に移動
-            console.log(window.scrollY);
-            containerRef.current.scrollLeft = window.scrollY;
+            containerRef.current.scrollLeft += event.deltaY;
         }
     }, []);
 
     useEffect(() => {
         // scrollで発火
-        window.addEventListener("scroll", updateScroll);
+        window.addEventListener("wheel", updateScroll);
 
         return () => {
-            window.removeEventListener("scroll", updateScroll);
+            window.removeEventListener("wheel", updateScroll);
         };
     }, [updateScroll]);
 
