@@ -1,8 +1,25 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 
 interface Game2Props {
   onComplete: () => void;
   isActive: boolean;
+=======
+export function Game2(): JSX.Element {
+    return (
+        <>
+            <div
+                style={{
+                    width: "70%",
+                    height: "80%",
+                    backgroundColor: "lightgreen",
+                }}
+            >
+                <h1>Game 2</h1>
+            </div>
+        </>
+    );
+>>>>>>> 6ca6860cfffebd8b5aa55a291962f020b626dda6
 }
 
 export const Game2: React.FC<Game2Props> = ({ onComplete, isActive }) => {
