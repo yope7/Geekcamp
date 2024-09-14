@@ -1,5 +1,3 @@
-import { Typewriter } from "react-simple-typewriter";
-
 export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX.Element {
     return (
         <div
