@@ -1,9 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
-import { Game1, Game2, Game3, TV } from "../components";
-import { CrtTv } from "../components/CrtTv";
-
 export function IndexPage(): JSX.Element {
     const containerRef = useRef<HTMLDivElement>(null);
 
