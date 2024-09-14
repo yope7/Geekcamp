@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 
-import { Game1, Game2, Game3 } from "../components";
+import { Game1, Game2, Game3, TV } from "../components";
 
 export function IndexPage(): JSX.Element {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -75,7 +75,9 @@ export function IndexPage(): JSX.Element {
                             height: "100%",
                         }}
                     >
+                      <TV>
                         <Game1 />
+                      </TV>
                     </div>
                 </div>
                 <div style={{ minWidth: "100vw", height: "100vh" }}>
