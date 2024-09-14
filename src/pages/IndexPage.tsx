@@ -41,7 +41,12 @@ export function IndexPage(): JSX.Element {
                     msOverflowStyle: "none",
                 }}
             >
-                <div style={{ minWidth: "100vw", backgroundColor: "lightgray" }}>
+                <div
+                    style={{
+                        minWidth: "100vw",                        
+                        background: "linear-gradient(to right, gray, white)",
+                    }}
+                >
                     <h1>Index Page</h1>
                 </div>
                 <div style={{ minWidth: "100vw", height: "100vh" }}>
