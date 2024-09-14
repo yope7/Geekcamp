@@ -75,13 +75,13 @@ export function IndexPage(): JSX.Element {
                     >
                         <div
                             style={{
-                                // 大きさの設定
-                                width: "400px",
+                                // この要素の設定
+                                width: "100%",
                                 height: "300px",
+                                padding: "10px",
                                 // 子要素の設定
                                 display: "flex",
                                 flexDirection: "column", // 子要素を縦に並べる
-                                // justifyContent: "space-between", // 要素の間にスペースを空ける
                                 // 3Dの設定
                                 transform: "rotateX(0deg) rotateY(10deg) rotateZ(-5deg)", // x, y, zの回転角度。各軸に対して回転
                                 translate: "40px 0px 200px", // 多分x, y, zの移動量
@@ -95,6 +95,9 @@ export function IndexPage(): JSX.Element {
                                 overflow: "auto",
                                 scrollbarWidth: "none",
                                 msOverflowStyle: "none",
+                                // 自動改行を有効に
+                                whiteSpace: "normal", // テキストを折り返す
+                                wordWrap: "break-word", // 長い単語も折り返す
                             }}
                         >
                             <Typewriter words={["Welcome to the Retro World1!"]} cursor cursorStyle="_" typeSpeed={50} deleteSpeed={50} delaySpeed={1000} />
