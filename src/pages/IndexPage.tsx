@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useRef } from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 import { Game1, Game2, Game3 } from "../components";
+import { CrtTv } from "../components/CrtTv";
 
 export function IndexPage(): JSX.Element {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const updateScroll = useCallback((event: WheelEvent) => {
         // width
-        console.log(containerRef.current?.scrollWidth);
-        console.log(containerRef.current?.scrollLeft);
         if (containerRef.current) {
             containerRef.current.scrollLeft += event.deltaY;
         }
@@ -63,56 +63,9 @@ export function IndexPage(): JSX.Element {
                         justifyContent: "center",
                     }}
                 >
-                    <h1>Index Page</h1>
-                </div>
-                <div style={{ minWidth: "100vw", height: "100vh" }}>
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%",
-                            height: "100%",
-                        }}
-                    >
-                        <Game1 />
-                    </div>
-                </div>
-                <div style={{ minWidth: "100vw", height: "100vh" }}>
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%",
-                            height: "100%",
-                        }}
-                    >
-                        <Game2 />
-                    </div>
-                </div>
-                <div style={{ minWidth: "100vw", height: "100vh" }}>
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%",
-                            height: "100%",
-                        }}
-                    >
-                        <Game3 />
-                    </div>
-                </div>
-                <div
-                    style={{
-                        minWidth: "100vw",
-                        alignItems: "center",
-                        display: "flex",
-                        justifyContent: "center",
-                    }}
-                >
-                    <h1>End Page</h1>
+                    <CrtTv>
+                        <Typewriter words={["Welcome to the Retro World!"]} cursor cursorStyle="_" typeSpeed={50} deleteSpeed={50} delaySpeed={1000} />
+                    </CrtTv>
                 </div>
             </div>
         </div>
