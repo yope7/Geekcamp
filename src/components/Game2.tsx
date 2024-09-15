@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Typewriter } from "react-simple-typewriter";
 
 const FISH_COUNT = 7;
-const GAME_DURATION = 1; // ゲームの持ち時間を10秒に設定
+const GAME_DURATION = 5; // ゲームの持ち時間を10秒に設定
 
 export const Game2: React.FC<{ onShutdown: () => void }> = ({ onShutdown }) => {
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'result'>('intro');
