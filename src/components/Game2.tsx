@@ -144,7 +144,7 @@ export const Game2: React.FC = () => {
   const getTypewriterText = () => {
     switch (gameState) {
       case 'intro':
-        return ['金魚すくいへようこそ！スタートボタンを押してゲームを始めてください。'];
+        return ['金魚すくいへようこそ！'];
       case 'playing':
         return [`残り時間: ${timeLeft}秒 スコア: ${score}`];
       case 'result':
@@ -210,6 +210,7 @@ export const Game2: React.FC = () => {
       <button
         onClick={handleStart}
         style={{
+          pointerEvents: 'auto',
           backgroundColor: '#4caf50',
           color: 'white',
           border: 'none',

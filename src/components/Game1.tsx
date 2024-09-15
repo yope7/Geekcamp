@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Typewriter } from "react-simple-typewriter";
 
 const maskAsciiArt = {
@@ -45,6 +45,8 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
   const [maskArt, setMaskArt] = useState<string>('');
   const [typewriterKey, setTypewriterKey] = useState<number>(0);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const masks = ['狐', 'うさぎ', 'いぬ', 'かわいいねこ', '某キャラクター'];
 
   useEffect(() => {
@@ -78,12 +80,34 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '40vh', width: '100%' }}>
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'auto' }}>
-        <div style={{ width: '100%', textAlign: 'center', padding: '10px 0', color: 'white' }}>
+    <div ref={containerRef} style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%', justifyContent: 'space-between', padding: '5px' }}>
+      <div style={{ fontSize: '0.8em', textAlign: 'center', marginBottom: '5px' }}>
+        <Typewriter
+          key={typewriterKey} 
+          words={['お面くじびき']}
+          loop={1}
+          cursor
+          cursorStyle="_"
+          typeSpeed={50}
+          deleteSpeed={10}
+          delaySpeed={1000}
+        />
+      </div>
+      <div style={{ 
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        border: '1px solid #00ffff',
+        borderRadius: '5px',
+        padding: '5px',
+        overflow: 'hidden'
+      }}>
+        <div style={{ fontSize: '0.7em', textAlign: 'center', marginBottom: '5px' }}>
           <Typewriter
-            key={typewriterKey} 
-            words={['お面くじびき']}
+            key={typewriterKey}
+            words={getTypewriterText()}
             loop={1}
             cursor
             cursorStyle="_"
@@ -92,40 +116,38 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
             delaySpeed={1000}
           />
         </div>
-        <div style={{ flex: 1, padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ marginBottom: '10px', fontSize: '0.8rem', textAlign: 'center' }}>
-            <Typewriter
-              key={typewriterKey}
-              words={getTypewriterText()}
-              loop={1}
-              cursor
-              cursorStyle="_"
-              typeSpeed={50}
-              deleteSpeed={10}
-              delaySpeed={1000}
-            />
-          </div>
-          {maskArt && (
-            <pre style={{ textAlign: 'center', color: '#ffffff', fontSize: '0.8rem' }}>
-              {maskArt}
-            </pre>
-          )}
-        </div>
+        {maskArt && (
+          <pre style={{ 
+            textAlign: 'center', 
+            color: '#00ffff', 
+            fontSize: '0.6em',
+            whiteSpace: 'pre-wrap',
+            wordWrap: 'break-word',
+            maxWidth: '100%',
+            maxHeight: '60%',
+            overflow: 'hidden',
+            margin: '5px 0'
+          }}>
+            {maskArt}
+          </pre>
+        )}
+        <button
+          onClick={handleStart}
+          style={{
+            pointerEvents:"auto",
+            backgroundColor: 'transparent',
+            color: '#00ffff',
+            border: '1px solid #00ffff',
+            padding: '5px 10px',
+            fontSize: '0.7em',
+            cursor: 'pointer',
+            borderRadius: '3px',
+            marginTop: '5px'
+          }}
+        >
+          {gameState === 'intro' ? 'Start' : gameState === 'playing' ? 'お面を引く' : 'Game2へ進む'}
+        </button>
       </div>
-      <button
-        onClick={handleStart}
-        style={{
-          backgroundColor: '#4caf50',
-          color: 'white',
-          border: 'none',
-          padding: '15px 0',
-          fontSize: '1.5rem',
-          cursor: 'pointer',
-          width: '100%'
-        }}
-      >
-        {gameState === 'intro' ? 'Start' : gameState === 'playing' ? 'お面を引く' : 'Game2へ進む'}
-      </button>
     </div>
   );
 };

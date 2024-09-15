@@ -17,6 +17,7 @@ export function IndexPage(): JSX.Element {
                 height: "100vh",
                 overflow: "hidden",
                 whiteSpace: "nowrap",
+                pointerEvents: "none",
             }}
         >
             <img
@@ -27,7 +28,8 @@ export function IndexPage(): JSX.Element {
                     width: "100%",
                     height: "100%",
                     // objectFit: "cover",
-                    zIndex: -1,
+                    zIndex: 2,
+                    // pointerEvents: "none",
                 }}
             />
             <div
@@ -40,11 +42,13 @@ export function IndexPage(): JSX.Element {
                     // スクロールバーを非表示
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
+                    // pointerEvents: "none",
                 }}
             >
                 <div
                     style={{
                         minWidth: "100vw",
+                        pointerEvents:"none"
                     }}
                 >
                     <TvScreenLayout>

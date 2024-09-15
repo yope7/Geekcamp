@@ -7,11 +7,12 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
                 justifyContent: "center",
                 perspective: "1300px", // 大きいほうが平面に近づく。多分目からオブジェクトまでの距離
                 position: "absolute",
-                zIndex: -2,
+                zIndex: 1,
                 height: "29%",
                 width: "19%",
                 top: "58%",
                 left: "58%",
+                // pointerEvents: "none",
             }}
         >
             <div
@@ -40,6 +41,7 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
                     // 自動改行を有効に
                     whiteSpace: "normal", // テキストを折り返す
                     wordWrap: "break-word", // 長い単語も折り返す
+                    // pointerEvents: "none",
                 }}
             >
                 {children}
