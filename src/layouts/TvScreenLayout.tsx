@@ -28,7 +28,7 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
                     // translate: "40px 0px 200px", // 多分x, y, zの移動量
                     transformOrigin: "0%",
                     // 背景の設定
-                    backgroundColor: "#000000",
+                    backgroundColor: "rgb(12, 12, 12)",
                     // テキストの設定
                     fontFamily: "Courier New",
                     color: "#00ffff",
