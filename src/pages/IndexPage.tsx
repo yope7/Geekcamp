@@ -10,7 +10,7 @@ export function IndexPage(): JSX.Element {
             }}
         >
             <img
-                src="/images/ie.png"
+                src="/images/home.png"
                 alt="natsukumo"
                 style={{
                     position: "absolute",
@@ -35,9 +35,6 @@ export function IndexPage(): JSX.Element {
                 <div
                     style={{
                         minWidth: "100vw",
-                        alignItems: "center",
-                        display: "flex",
-                        justifyContent: "center",
                     }}
                 >
                     <TvScreenLayout>

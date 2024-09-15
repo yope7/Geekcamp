@@ -2,29 +2,33 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
     return (
         <div
             style={{
-                width: "400px",
-                height: "300px",
                 alignItems: "center",
                 display: "flex",
                 justifyContent: "center",
-                perspective: "1000px", // 大きいほうが平面に近づく。多分目からオブジェクトまでの距離
+                perspective: "1300px", // 大きいほうが平面に近づく。多分目からオブジェクトまでの距離
+                position: "absolute",
+                zIndex: -2,
+                height: "310px",
+                width: "367px",
+                top: "565px",
+                left: "1110px",
             }}
         >
             <div
                 style={{
                     // この要素の設定
                     width: "100%",
-                    height: "300px",
-                    padding: "10px",
+                    height: "100%",
+                    padding: "20px",
                     // 子要素の設定
                     display: "flex",
                     flexDirection: "column", // 子要素を縦に並べる
                     // 3Dの設定
-                    transform: "rotateX(0deg) rotateY(10deg) rotateZ(-5deg)", // x, y, zの回転角度。各軸に対して回転
-                    translate: "40px 0px 200px", // 多分x, y, zの移動量
-                    transformOrigin: "-30%",
+                    transform: "rotateX(-5deg) rotateY(21deg) rotateZ(-2.5deg)", // x, y, zの回転角度。各軸に対して回転
+                    // translate: "40px 0px 200px", // 多分x, y, zの移動量
+                    transformOrigin: "0%",
                     // 背景の設定
-                    backgroundColor: "black",
+                    backgroundColor: "#000000",
                     // テキストの設定
                     fontFamily: "Courier New",
                     color: "#00ffff",
