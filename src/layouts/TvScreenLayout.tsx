@@ -13,6 +13,8 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
                 top: "58%",
                 left: "58%",
                 // pointerEvents: "none",
+                //スクロールを禁止
+                
             }}
         >
             <div
