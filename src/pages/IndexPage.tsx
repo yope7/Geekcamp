@@ -1,6 +1,16 @@
 import { TvScreenLayout } from "../layouts/TvScreenLayout";
+import { Game1 } from "../components/Game1";
+import { Game2 } from "../components/Game2";
+import React, { useState, useEffect } from 'react';
 
 export function IndexPage(): JSX.Element {
+      const [currentGame, setCurrentGame] = useState<'game1' | 'game2'>('game1');
+
+      const handleGame1Complete = () => {
+        setCurrentGame('game2');
+      };
+
+
     return (
         <div
             style={{
@@ -11,7 +21,7 @@ export function IndexPage(): JSX.Element {
         >
             <img
                 src="/images/ie.png"
-                alt="natsukumo"
+                alt="ie"
                 style={{
                     position: "absolute",
                     width: "100%",
@@ -41,7 +51,13 @@ export function IndexPage(): JSX.Element {
                     }}
                 >
                     <TvScreenLayout>
-                        Game 1
+                    <div>
+                    {currentGame === 'game1' ? (
+                        <Game1 onGameComplete={handleGame1Complete} />
+                    ) : (
+                        <Game2 />
+                    )}
+                    </div>
                     </TvScreenLayout>
                 </div>
             </div>
