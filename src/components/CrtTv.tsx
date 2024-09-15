@@ -11,14 +11,15 @@ export function CrtTv({ children }: { children: React.ReactNode }): JSX.Element 
                 alignItems: "center",
                 padding: "0 10%",
                 position: "relative",
+                rotate: "20% 50%",
             }}
         >
-            <img 
+            {/* <img 
                 src="/images/TV.png" 
                 alt="Vintage TV" 
                 width="800px" 
                 style={{ position: "relative" }} 
-            />
+            /> */}
             <div
                 style={{
                     position: "absolute",
@@ -37,7 +38,7 @@ export function CrtTv({ children }: { children: React.ReactNode }): JSX.Element 
                         borderRadius: "20px",
                         boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.7)",
                         position: "relative",
-                        zIndex: -1,
+                        // zIndex: ,
                     }}
                 >
                     <div

@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useRef } from "react";
+import { Box } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
 
 import { Game1, Game2, Game3, TV } from "../components";
 import { CrtTv } from "../components/CrtTv";
+import { color } from "framer-motion";
 
 export function IndexPage(): JSX.Element {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -32,7 +34,7 @@ export function IndexPage(): JSX.Element {
             }}
         >
             <img
-                src="/images/natukumo.png"
+                src="/images/ie.png"
                 alt="natsukumo"
                 style={{
                     position: "absolute",
@@ -64,10 +66,10 @@ export function IndexPage(): JSX.Element {
                     }}
                 >
                     <CrtTv>
-                        <Typewriter words={["Welcome to the Retro World!"]} cursor cursorStyle="_" typeSpeed={50} deleteSpeed={50} delaySpeed={1000} />
+                        <Game1 />
                     </CrtTv>
                 </div>
-                <div style={{ minWidth: "100vw", height: "100vh" }}>
+                {/* <div style={{ minWidth: "100vw", height: "100vh" }}>
                     <div
                         style={{
                             display: "flex",
@@ -79,7 +81,7 @@ export function IndexPage(): JSX.Element {
                     >
                         <TV>
                             <Game1 />
-                        </TV>
+                        </TV> 
                     </div>
                 </div>
                 <div style={{ minWidth: "100vw", height: "100vh" }}>
@@ -94,8 +96,8 @@ export function IndexPage(): JSX.Element {
                     >
                         <Game2 />
                     </div>
-                </div>
-                <div style={{ minWidth: "100vw", height: "100vh" }}>
+                </div> */}
+                {/* <div style={{ minWidth: "100vw", height: "100vh" }}>
                     <div
                         style={{
                             display: "flex",
@@ -117,8 +119,8 @@ export function IndexPage(): JSX.Element {
                     }}
                 >
                     <h1>End Page</h1>
-                </div>
-            </div>
+                </div　> */}
+             </div> 
         </div>
     );
 }
