@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Typewriter } from "react-simple-typewriter";
 
 const FISH_COUNT = 7;
-const GAME_DURATION = 10; // ゲームの持ち時間を10秒に設定
+const GAME_DURATION = 1; // ゲームの持ち時間を10秒に設定
 
-export const Game2: React.FC = () => {
+export const Game2: React.FC<{ onShutdown: () => void }> = ({ onShutdown }) => {
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'result'>('intro');
   const [typewriterKey, setTypewriterKey] = useState<number>(0);
   const [scoopPosition, setScoopPosition] = useState({ x: 7.5, y: 10 });
@@ -12,6 +12,9 @@ export const Game2: React.FC = () => {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(GAME_DURATION);
 
+  const handleShutdown = () => {
+    onShutdown();
+  };
   const initializeFishes = useCallback(() => {
     return Array.from({ length: FISH_COUNT }, () => ({
       x: Math.random() * 15,
@@ -185,7 +188,46 @@ const getTypewriterText = () => {
           />
         </div>
       )}
-      {gameState !== 'playing' && (
+       {gameState === 'result' && (
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1vw' }}>
+          <button
+            onClick={handleStart}
+            style={{
+              backgroundColor: 'transparent',
+              color: '#00ffff',
+              border: '0.2vh solid #00ffff',
+              padding: '0.5vh 1vw',
+              fontSize: '1.3vw',
+              cursor: 'pointer',
+              borderRadius: '0.5vh',
+              pointerEvents: 'auto',
+              position: 'absolute',
+              marginLeft: '2vw',
+              marginTop: '8vh'
+            }}
+          >
+            もう一度遊ぶ
+          </button>
+          <button
+            onClick={handleShutdown}
+            style={{
+              backgroundColor: 'transparent',
+              color: '#ff6347',
+              border: '0.2vh solid #ff6347',
+              padding: '0.5vh 1vw',
+              fontSize: '1.3vw',
+              cursor: 'pointer',
+              borderRadius: '0.5vh',
+              pointerEvents: 'auto',
+              position: 'absolute',
+              marginTop: '14vh'
+            }}
+          >
+            やめる
+          </button>
+        </div>
+      )}
+      {gameState === 'intro' && (
         <button
           onClick={handleStart}
           style={{
@@ -202,7 +244,7 @@ const getTypewriterText = () => {
             marginLeft: '3vw',
           }}
         >
-          {gameState === 'intro' ? 'スタート' : 'もう一度遊ぶ'}
+          スタート
         </button>
       )}
     </div>

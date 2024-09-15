@@ -24,13 +24,6 @@ const maskAsciiArt = {
  (˚ˎ 。7
   |、˜〵
    じしˍ,)ノ
-  `,
-  某キャラクター: `
-/＼＿_.ヘ／ヽ
-　　 /　　　(＿(⌒厂ヽ
-　　|　　　　　￣＼ノ
-∩∩ ミ⁰̷̴͈ 　。　⁰̷̴͈ 　　ミ
-( ⊂) 乀＿＿＿＿＿ノ
   `
 };
 
@@ -46,7 +39,7 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const masks = ['狐', 'うさぎ', 'いぬ', 'かわいいねこ', '某キャラクター'];
+  const masks = ['狐', 'うさぎ', 'いぬ', 'かわいいねこ'];
 
   useEffect(() => {
     setTypewriterKey(prevKey => prevKey + 1);
