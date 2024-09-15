@@ -12,7 +12,6 @@ const maskAsciiArt = {
 　 ＼ Ｖ ／
 　 ／･ω･＼
 　｜ ❤ 　｜
-　 ＼＿＿／
   `,
   いぬ: `
 ┏┳━━━━━┳┓
@@ -69,11 +68,11 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
   const getTypewriterText = () => {
     switch (gameState) {
       case 'intro':
-        return ['スタートボタンを押してゲームを始めてください。'];
+        return ['ボタンを押してお面くじびきを始めてください。'];
       case 'playing':
         return ['ボタンを押してお面を引いてください。'];
       case 'result':
-        return [result, 'ボタンを押してGame2に進んでください。'];
+        return [result];
       default:
         return [''];
     }
@@ -81,7 +80,7 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
 
   return (
     <div ref={containerRef} style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%', justifyContent: 'space-between', padding: '5px' }}>
-      <div style={{ fontSize: '0.8em', textAlign: 'center', marginBottom: '5px' }}>
+      <div style={{ fontSize: '1vw', textAlign: 'center', marginBottom: '5px' }}>
         <Typewriter
           key={typewriterKey} 
           words={['お面くじびき']}
@@ -99,12 +98,12 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        border: '1px solid #00ffff',
+        // border: '1px solid #00ffff',
         borderRadius: '5px',
         padding: '5px',
         overflow: 'hidden'
       }}>
-        <div style={{ fontSize: '0.7em', textAlign: 'center', marginBottom: '5px' }}>
+        <div style={{ fontSize: '1vw', textAlign: 'left', marginBottom: '5px' }}>
           <Typewriter
             key={typewriterKey}
             words={getTypewriterText()}
@@ -118,15 +117,17 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
         </div>
         {maskArt && (
           <pre style={{ 
+            position: 'absolute',
             textAlign: 'center', 
             color: '#00ffff', 
-            fontSize: '0.6em',
+            fontSize: '0.8vh',
             whiteSpace: 'pre-wrap',
             wordWrap: 'break-word',
             maxWidth: '100%',
             maxHeight: '60%',
             overflow: 'hidden',
-            margin: '5px 0'
+            margin: '4vh 0'
+            
           }}>
             {maskArt}
           </pre>
@@ -134,6 +135,7 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
         <button
           onClick={handleStart}
           style={{
+            position:"absolute",
             pointerEvents:"auto",
             backgroundColor: 'transparent',
             color: '#00ffff',
@@ -142,10 +144,10 @@ export const Game1: React.FC<Game1Props> = ({ onGameComplete }) => {
             fontSize: '0.7em',
             cursor: 'pointer',
             borderRadius: '3px',
-            marginTop: '5px'
+            marginTop: '12vh'
           }}
         >
-          {gameState === 'intro' ? 'Start' : gameState === 'playing' ? 'お面を引く' : 'Game2へ進む'}
+          {gameState === 'intro' ? 'Start' : gameState === 'playing' ? 'お面を引く' : '次のゲームを始める'}
         </button>
       </div>
     </div>
