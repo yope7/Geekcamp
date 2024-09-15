@@ -47,6 +47,19 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
                 }}
             >
                 {children}
+                <div
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundImage: "radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 80%)",
+                        // 円形にグラデーションをかける
+                        mixBlendMode: "normal", // ブレンドモードを指定
+                        pointerEvents: "none", // この要素がクリックなどを妨げないようにする
+                    }}
+                />
             </div>
         </div>
     );
