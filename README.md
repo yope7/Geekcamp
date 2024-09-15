@@ -10,6 +10,8 @@
 
 ゲームで遊びながら、どこか夏の終わりの切なさを感じるサイトです。
 
+これは[技育CAMP2024](https://talent.supporterz.jp/events/6f769c37-5709-4ddc-804e-4c4ff38d2112/)で開発したものです。
+
 デモページは[こちら](https://geek-camp-30a2f.web.app/)！
 
 [開発者用ドキュメント](/docs/README.md)
