@@ -203,7 +203,7 @@ const getTypewriterText = () => {
               pointerEvents: 'auto',
               position: 'absolute',
               marginLeft: '2vw',
-              marginTop: '8vh'
+              marginTop: '2vw'
             }}
           >
             もう一度遊ぶ
@@ -220,7 +220,7 @@ const getTypewriterText = () => {
               borderRadius: '0.5vh',
               pointerEvents: 'auto',
               position: 'absolute',
-              marginTop: '14vh'
+              marginTop: '5vw'
             }}
           >
             やめる
