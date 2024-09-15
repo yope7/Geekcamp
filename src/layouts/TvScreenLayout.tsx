@@ -8,10 +8,10 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
                 perspective: "1300px", // 大きいほうが平面に近づく。多分目からオブジェクトまでの距離
                 position: "absolute",
                 zIndex: -2,
-                height: "310px",
-                width: "367px",
-                top: "565px",
-                left: "1110px",
+                height: "29%",
+                width: "19%",
+                top: "58%",
+                left: "58%",
             }}
         >
             <div
@@ -29,6 +29,7 @@ export function TvScreenLayout({ children }: { children: React.ReactNode }): JSX
                     transformOrigin: "0%",
                     // 背景の設定
                     backgroundColor: "rgb(12, 12, 12)",
+                    // backgroundColor: "rgba(0, 0, 0, 0.8)",
                     // テキストの設定
                     fontFamily: "Courier New",
                     color: "#00ffff",
