@@ -15,3 +15,6 @@
 デモページは[こちら](https://geek-camp-30a2f.web.app/)！
 
 [開発者用ドキュメント](/docs/README.md)
+
+発表用スライドのリンクは[こちら](https://docs.google.com/presentation/d/1d6p5iZ6cwu3HaZwrf0NNYwzNIRdAyWYHJUO9HScY3v8/edit?usp=sharing)
+デモ動画もスライドに入っています
