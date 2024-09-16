@@ -99,7 +99,7 @@ export const Game2: React.FC<{ onShutdown: () => void }> = ({ onShutdown }) => {
             newY < scoopPosition.y + scoopSize &&
             newY + fishSize > scoopPosition.y
           ) {
-            setScore((prevScore) => prevScore + 0.5);
+            setScore((prevScore) => prevScore + 1);
             return {
               x: Math.random() * 15,
               y: Math.random() * 20,
